@@ -1,6 +1,6 @@
 ### King of bots
 
-基于Springboot + vue开发的一个在线对战游戏平台
+基于Springboot + vue3开发的一个在线的双人贪吃蛇对游戏。
 
 PK：匹配截面（微服务），实况直播（WebSocket），真人Pk（WebSocket)
 
