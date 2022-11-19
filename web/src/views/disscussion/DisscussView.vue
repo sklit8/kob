@@ -1,14 +1,17 @@
 <template>
   <div class="dis">待开放...</div>
+
   <BottomBar />
 </template>
 
 <script>
-import BottomBar from "../../components/BottomBar.vue";
+import BottomBar from "../../components/BottomBar.vue"
 export default {
   components: {
     BottomBar,
   },
+  setup(){
+  }
 };
 </script>
 

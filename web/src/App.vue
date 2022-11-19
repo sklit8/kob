@@ -18,5 +18,7 @@ export default{
 
 
 <style>
-
+body{
+  background-image: url(@/assets/images/background.jpg);
+}
 </style>

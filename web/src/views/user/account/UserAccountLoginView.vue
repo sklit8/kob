@@ -3,7 +3,7 @@
     <div class="text-center">
       <main class="form-signin">
         <form @submit.prevent="login">
-          <img class="mb-4" src="@/assets/images/homeSnake.png" alt="" width="100" height="100" />
+          <img class="mb-4" src="@/assets/images/logo.png" alt="" width="150" height="150" />
           <h1 class="h3 mb-3 fw-normal">请登录</h1>
           <div class="form-floating">
             <input v-model="username" type="text" class="form-control" id="username" placeholder="account" />
@@ -19,8 +19,7 @@
               <input type="checkbox" value="remember-me" /> 记住用户名和密码
             </label>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">登录</button>
-          <router-link class="register-link" :to="{name:'user_register_index'}" role="button">没有账号？点击注册</router-link>
+          <button class="w-100 btn btn-lg btn-primary" type="submit" >登录</button>
           <p class="mt-5 mb-3 text-muted">&copy; sklit</p>
         </form>
       </main>
@@ -85,7 +84,7 @@ export default {
           username,
           password,
           error_message,
-          login
+          login,
       }
   }
 };
@@ -110,9 +109,6 @@ div.top{
 }
 body {
   height: 100%;
-}
-
-body {
   display: flex;
   align-items: center;
   padding-top: 40px;

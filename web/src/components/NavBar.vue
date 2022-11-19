@@ -1,7 +1,7 @@
 <template>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <router-link class="navbar-brand" :to="{name:'home'}">King Of Bots</router-link>
+    <router-link class="navbar-brand" :to="{name:'home'}">King Of Snakes</router-link>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -36,12 +36,12 @@
       <ul class="navbar-nav" v-else-if="!$store.state.user.pulling_info">
         <li class="nav-item text-end">
           <router-link class="btn btn-outline-light me-2" :to="{name:'user_login_index'}" role="button">
-            登录
+            登 录
           </router-link>
         </li>
         <li class="nav-item text-end">
-          <router-link class="btn btn-success" :to="{name:'user_register_index'}" role="button">
-            注册
+          <router-link class="btn btn-info" :to="{name:'user_register_index'}" role="button">
+            注 册
           </router-link>
         </li>
       </ul>

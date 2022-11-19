@@ -119,8 +119,9 @@ export default {
         width: 55vw;
         height: 65vh;
         margin: 40px auto;
-        background-color: rgba(8, 193, 250, 0.1);
-        border-radius: 5%;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 1%;
+        border: 1px;
     }
     div.user-photo{
         text-align: center;
@@ -156,5 +157,6 @@ export default {
     font-size:37px;font-style:normal;
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;}
+    -moz-osx-font-smoothing: grayscale;
+    }
 </style>
