@@ -1,0 +1,17 @@
+server:
+  port: 3002
+
+spring:
+  application:
+    name: nacos-botrunning
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 #??Nacos??
+service-url:
+  nacos-user-service: http://nacos-backend
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  #??????/health?/info??????????????????

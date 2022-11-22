@@ -1,0 +1,17 @@
+server:
+  port: 3001
+
+spring:
+  application:
+    name: nacos-matching
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 #配置Nacos地址
+service-url:
+  nacos-user-service: http://nacos-backend
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  #默认只公开了/health和/info端点，要想暴露所有端点只需设置成星号

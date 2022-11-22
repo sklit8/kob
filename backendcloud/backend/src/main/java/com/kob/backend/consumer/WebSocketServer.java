@@ -32,8 +32,8 @@ public class WebSocketServer {
     public static BotMapper botMapper;
     public static RestTemplate restTemplate;
     public Game game = null;
-    private final static String addPlayerUrl = "http://127.0.0.1:3001/player/add";
-    private final static String removePlayerUrl = "http://127.0.0.1:3001/player/remove";
+    private final static String addPlayerUrl = "http://nacos-matching/player/add";
+    private final static String removePlayerUrl = "http://nacos-matching/player/remove";
 
     @Autowired
     public void setUserMapper(UserMapper userMapper) {
@@ -131,6 +131,7 @@ public class WebSocketServer {
         data.add("user_id",this.user.getId().toString());
         data.add("rating",this.user.getRating().toString());
         data.add("bot_id",botId.toString());
+        //发送到匹配系统服务器
         restTemplate.postForObject(addPlayerUrl,data,String.class);
 
     }
@@ -140,6 +141,7 @@ public class WebSocketServer {
     private void stopMatching() {
         MultiValueMap<String,String> data = new LinkedMultiValueMap<>();
         data.add("user_id",this.user.getId().toString());
+        //发送到匹配系统服务器
         restTemplate.postForObject(removePlayerUrl,data,String.class);
     }
 

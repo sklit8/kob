@@ -1,6 +1,6 @@
 ### King of bots
 
-基于Springboot + vue3开发的一个在线的双人贪吃蛇对游戏。
+基于 Vue 3 + Spring Boot 2 开发的一个在线的双人贪吃蛇对游戏，实现了玩家与AI进行匹配，或根据玩家的天梯积分进行双人匹配，实现了执行用户自定义代码等。
 
 PK：匹配截面（微服务），实况直播（WebSocket），真人Pk（WebSocket)
 
@@ -24,15 +24,21 @@ PK：匹配截面（微服务），实况直播（WebSocket），真人Pk（WebS
 
 后端基于SpringBoot框架实现
 
-使用MyBatisPlus实现Mapper层
+使用 MyBatis Plus 框架自动生成业务的增删改查重复代码，降低开发成本。
 
-使用Jwt实现跨域访问，解决信息丢失问题
+使用Jwt实现单点登录，解决了跨域访问信息丢失问题
 
 使用vue3-ace-editor设置前端代码编辑
 
-使用SpringCloud实现匹配系统，BOt代码执行系统微服务
+使用SpringCloud实现项目的微服务化，根据功能划分出匹配系统和Bot代码执行系统。
 
 使用RestTemplate进行线程之间的通信，对接微服务系统
+
+使用SpringSecurity实现网页鉴权功能
+
+遵循 Restful 设计规范编写接口，降低前后端接口沟通和理解成本。
+
+采用 Nginx 完成前端项目部署、采用 Docker 容器完成后端项目部署，并且使用宝塔面板对项目进行运维监控。
 
 ##### 登录持久化
 

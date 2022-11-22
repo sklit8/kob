@@ -6,7 +6,6 @@ import ModuleRecord from './record'
 export default createStore({
   state: {
     productUrl:"http://127.0.0.1:3000",
-    onlineUrl:"",
   },
   getters: {
   },

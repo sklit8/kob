@@ -27,7 +27,7 @@ public class Game extends Thread{
     private ReentrantLock lock = new ReentrantLock();
     private String Status = "playing";//游戏状态
     private String loser = "";//谁是loser
-    private static String addBotUrl = "http://127.0.0.1:3002/bot/add";
+    private static String addBotUrl = "http://nacos-botrunning/bot/add";
     public Game(Integer rows, Integer cols, Integer inner_walls_count, Integer idA, Bot botA, Integer idB,Bot botB) {
         this.rows = rows;
         this.cols = cols;
@@ -172,6 +172,7 @@ public class Game extends Thread{
         data.add("user_id",player.getId().toString());
         data.add("bot_code",player.getBotCode());
         data.add("input",getInput(player));
+        //发送到代码运行服务器
         WebSocketServer.restTemplate.postForObject(addBotUrl,data,String.class);
     }
 

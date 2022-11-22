@@ -1,0 +1,26 @@
+server:
+  port: 3000
+
+spring:
+  datasource:
+    username: root
+    password: luo147258
+    url: jdbc:mysql://localhost:3306/kob?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: nacos-backend
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+#消费者将要去访问的微服务名称(注册成功进nacos的微服务提供者【可选】，注意：nacos-payment-provider含有IP和端口)
+service-url:
+  nacos-matching-service:
+    -http://nacos-matching
+    -http://nacos-botrunning
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  #默认只公开了/health和/info端点，要想暴露所有端点只需设置成星号

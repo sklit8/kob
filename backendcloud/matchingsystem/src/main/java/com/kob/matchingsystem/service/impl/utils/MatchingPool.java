@@ -15,7 +15,7 @@ public class MatchingPool extends Thread{
     private static List<Player> players = new ArrayList<>(); //玩家匹配队列
     private ReentrantLock lock = new ReentrantLock();//锁
     private static RestTemplate restTemplate;
-    private final static String startGameUrl = "http://127.0.0.1:3000/pk/start/game";
+    private final static String startGameUrl = "http://nacos-backend/pk/start/game";
     @Autowired
     public void setRestTemplate(RestTemplate restTemplate){
         MatchingPool.restTemplate = restTemplate;
@@ -80,6 +80,7 @@ public class MatchingPool extends Thread{
         data.add("a_bot_id",a.getBotId().toString());
         data.add("b_id",b.getUserId().toString());
         data.add("b_bot_id",b.getBotId().toString());
+        //发送到主服务器
         restTemplate.postForObject(startGameUrl,data,String.class);
     }
 

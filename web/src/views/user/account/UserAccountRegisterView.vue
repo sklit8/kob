@@ -27,6 +27,7 @@
 import ContentField from '../../../components/ContentField.vue'
 import { ref } from 'vue'
 import router from '../../../router/index'
+import { useStore } from 'vuex'
 import $ from 'jquery'
 
 export default{
@@ -34,13 +35,14 @@ export default{
         ContentField,
     },
     setup(){
+        const store = useStore();
         let username = ref('');
         let password = ref('');
         let confirmedPassword = ref('');
         let error_message = ref('');
         const register = () =>{
         $.ajax({
-            url:"http://127.0.0.1:3000/api/user/account/register",
+            url:store.state.productUrl+"/api/user/account/register",
             type:'post',
             data:{
               username:username.value,

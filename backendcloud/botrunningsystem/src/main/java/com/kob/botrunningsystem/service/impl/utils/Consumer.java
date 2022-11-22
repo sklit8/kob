@@ -19,7 +19,7 @@ public class Consumer extends Thread{
 
     private static RestTemplate restTemplate;
     private Bot bot;
-    private static final String receiveBotMoveUrl = "http://127.0.0.1:3000/pk/receive/bot/move";
+    private static final String receiveBotMoveUrl = "http://nacos-backend/pk/receive/bot/move";
 
     @Autowired
     private void setRestTemplate(RestTemplate restTemplate){
@@ -69,6 +69,7 @@ public class Consumer extends Thread{
         data.add("user_id",bot.getUserId().toString());
         data.add("direction",direction.toString());
         System.out.println(bot.getUserId()+"  "+direction.toString());
+        //发送到主服务器
         restTemplate.postForObject(receiveBotMoveUrl,data, String.class);
     }
 }
